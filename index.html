@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>session // login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scanlines" aria-hidden="true"></div>
+
+<main class="window" role="main">
+  <div class="titlebar">
+    <div class="dots" aria-hidden="true">
+      <span class="dot dot-a"></span>
+      <span class="dot dot-b"></span>
+      <span class="dot dot-c"></span>
+    </div>
+    <span class="titlebar-label">session — login</span>
+    <span class="titlebar-clock" id="clock">00:00:00</span>
+  </div>
+
+  <div class="window-body">
+    <p class="prompt-line">
+      <span class="prompt-symbol">$</span> whoami
+    </p>
+
+    <h1 class="heading">Sign in to continue</h1>
+    <p class="subheading">Enter credentials to open a session. Nothing leaves this browser.</p>
+
+    <form id="login-form" novalidate>
+      <div class="field">
+        <label for="username">
+          <span class="prompt-symbol">&gt;</span> username
+        </label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          autocomplete="username"
+          placeholder="e.g. pranay"
+          required
+        >
+      </div>
+
+      <div class="field">
+        <label for="password">
+          <span class="prompt-symbol">&gt;</span> password
+        </label>
+        <div class="password-row">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="current-password"
+            placeholder="••••••••"
+            required
+          >
+          <button type="button" id="toggle-password" class="ghost-btn" aria-label="Show password">show</button>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <label class="checkbox">
+          <input type="checkbox" id="remember" name="remember">
+          <span>remember this session</span>
+        </label>
+        <a href="#" class="link-muted" id="forgot-link">forgot password?</a>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">
+        <span class="btn-label">authenticate</span>
+        <span class="btn-cursor" aria-hidden="true">▌</span>
+      </button>
+    </form>
+
+    <div class="terminal-log" id="terminal-log" aria-live="polite">
+      <p class="log-line log-line-idle"><span class="prompt-symbol">$</span> awaiting input<span class="cursor-blink">▌</span></p>
+    </div>
+
+    <p class="footnote">
+      Demo credentials — username <code>demo</code>, password <code>demo123</code>
+    </p>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
