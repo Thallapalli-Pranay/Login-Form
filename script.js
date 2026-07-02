@@ -31,8 +31,8 @@ function setLog(message, tone = 'idle', withCursor = true) {
 // This is a front-end only demo: there is no server here.
 // Swap checkCredentials() for a real API call to your auth backend
 // (e.g. POST /api/login) when you wire this up to a real service.
-const DEMO_USERNAME = 'demo';
-const DEMO_PASSWORD = 'demo123';
+const DEMO_USERNAME = 'Demo';
+const DEMO_PASSWORD = 'Demo123';
 
 function checkCredentials(username, password) {
   return Promise.resolve(username === DEMO_USERNAME && password === DEMO_PASSWORD);
